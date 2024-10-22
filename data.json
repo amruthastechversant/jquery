@@ -1,0 +1,27 @@
+
+
+[
+{
+		"Firstname":"amrutha",
+		"Lastname":"s",
+		"Education":"Btech",
+		"Specification":"cse",
+		"Profile":"Graduated",
+		"Address":"kailas",
+		"Gender":"Female",
+		"Phonenumber":"7736217244",
+		"Hobbies":"Reading"
+},
+{
+		"Firstname":"saranya",
+		"Lastname":"s",
+		"Education":"Btech",
+		"Specification":"cse",
+		"Profile":"Graduated",
+		"Address":"Kailas ",
+		"Gender":"Female",
+		"Phonenumber":"7736217245",
+		"Hobbies":"Reading"
+}
+]
+	

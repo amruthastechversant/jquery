@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8" >
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+		<title>Jquery index form </title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+		<link rel=stylesheet href="file.css">
+	</head>	
+	<body>
+	 <div class="header container-fluid">
+            <div class="row justify-content-between  p-2 p-sm-3 mr-0">
+                <div class="col-lg-auto col-5 col-md-7 col-align-contents-center ">
+				<img src="https://asset.brandfetch.io/idlUfmKm6s/idE5df3o5U.png?updated=1718222703707" class="img-fluid" alt="logo" >
+                    <a class="p-0 px-md-3 px-1" href="jqueryhomepage.html">Home</a>
+                    <a class="p-0 px-md-3 px-1" href="jquerycontactlist.html">Contacts</a>
+                    <a class="p-0 px-md-3 px-1" href="jqueryindex.html">Create Contact</a>
+                </div>
+                <div class=" col-lg-3 col-3 col-md-5">
+                    <a class=" ms-auto float-end me-sm-2 me-0" href="jquerylogin.html">Log out</a>
+                </div>
+            </div>
+        </div>
+	<!--
+		<div class= "row header justify-content-between p-2 p-sm-3 mr-0" >
+				<div class=" col-lg-auto col-5  col-md-7  col- align-contents-center ">
+				<a class="p-0 px-md-3 px-1" href="homepage.html">Home</a>
+				<a class="p-0 px-md-3 px-1"  href="listContacts.html">Contacts</a>
+				<a class="p-0 px-md-3 px-1" href="index.html">CreateContact</a>
+				</div>
+				<div  class=" col-lg-3 col-3 col-md-5 ">
+					<a class="ms-auto float-end me-sm-2 me-0" href="login.html" >Log out</a>
+			</div>
+		</div>
+	-->
+		 <div class="container-fluid">
+        <div class="row headerdiv">
+            <h2 class="fs-2">Add Contact Form</h2>
+        </div>
+    </div>
+		<div></div>
+		<div class="errordiv"><p id="errorMsg"></p></div>
+		<form id="myForm"  >
+			<div class="container" >
+				<div class="row ">
+					<div class="col-lg-6 ">
+						
+						<label for="firstname" class="form-label">Firstname</label>
+						<input type="text" class="form-control " id="fname" placeholder="Firstname">
+						<div id="fnameerror"  style="color:red;"></div>
+					</div>
+					<div class="col-lg-6">
+						<label for="lastname" class="form-label">Lastname</label>
+						<input type="text" class="form-control " id="lname" placeholder="Lastname">
+						<div id="lnameerror" style="color:red;"></div>
+					</div>
+				</div>
+				<br>
+				
+				<div class="row">
+					<div class="col-12"><label for="Education" class="form-label ">Education</label></div>
+					<div class="col-lg-3 mb-2">
+						<select name="Education" id="Education"  multiple class="form-select " >
+						<option selected>Btech</option>
+						<option value="btech">Btech</option>
+						<option value="btech">Btech</option>
+						<option value="btech">Btech</option>
+						<option value="btech">Btech</option>
+						<option value="btech">Btech</option>
+						</select>
+					</div>
+					
+					<div class="col-lg-3 ">
+						
+						<select name="specification" id="specification" multiple class="form-select ">
+						<option value="others">Others</option>
+						<option value="civil">Civil</option>
+						<option value="ece">Ece</option>																					
+						<option value="eee">Eee</option>																					
+						<option value="mech">Mech</option>
+						<option value="cse">Cse</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<div class="col-lg-6 ">
+				<label for="age" class="form-label">Age</label> 
+				<input type="number"  class="form-control" id="age" placeholder="Age">
+				<div id="ageerror" class="errorMsg" style="color:red;"></div>
+				</div>
+				<br>
+				<div class=" col-lg-6">
+					<label for="profile" class="form-label">Profile</label>
+					<textarea class="form-control " id="profile" rows="4" cols="10"></textarea>
+					<div id="profileerror" class="errorMsg" style="color:red;"></div>
+				</div>
+				<br>
+				<div class="mb-3 col-lg-6">
+					<label for="profilepic" class="form-label">Profile photo</label>
+					<input type="file" class="form-control form-control-sm " id="profilepic" accept=".jpg,.jpeg,.webp,image/png">
+				</div>
+				<br>
+				<div class= "col-md-6 col-lg-6">
+					<label for="address" class="form-label">Address</label>
+					<textarea class="form-control " id="address" rows="5" cols="40"></textarea>
+					<div id="addresserror" class="errorMsg" style="color:red;"></div>
+				</div>
+				<br>
+				<div class="col-lg-6">
+				<label for="phoneno" class="form-label">Phone Number</label> 
+				<input type="text"  class="form-control"  id="phoneno" name="phoneno" maxlength="10" title="only numbers allowed">
+				<div id="phonenoerror" class="errorMsg" style="color:red;"></div>
+				</div>
+				<br>
+				<div class=" mb-3 col-12">
+					
+					<div class="col-sm-12"><label class="form-label">Gender</label> </div>
+					<div class="form-check form-check-inline col-md-4  ">
+						<input class="form-check-input" type="radio" name="gender" id="genderM" value="Male">
+						<label class="form-check-label" for="genderM">Male</label>
+					</div> 
+					<div class="form-check form-check-inline col-md-4 ">
+						<input class="form-check-input" type="radio" name="gender" id="genderF" value="Female">
+						<label class="form-check-label" for="genderF">Female</label>
+					</div>
+				
+				</div>
+				<div class="mb-3 col-12">
+					<div class="col-sm-12"><label class="form-label">Hobbies</label> </div>
+					<div class="form-check form-check-inline col-lg-3">
+						<input class="form-check-input" type="checkbox" name="hobbes" id="reading" value="reading">
+						<label class="form-check-label" for="reading">Reading</label>
+					</div>
+					<div class="form-check form-check-inline col-lg-3">
+						<input class="form-check-input" type="checkbox" name="hobbes" id="travel" value="travel">
+						<label class="form-check-label" for="travel">Travelling</label>
+					</div>
+					<div class="form-check form-check-inline col-lg-3">
+						<input class="form-check-input" type="checkbox" name="hobbes" id="music" value="music">
+						<label class="form-check-label" for="music">Music</label>
+					</div>
+					<br>
+					<br>
+					<div class=" mb-3 col-lg-6">
+						<label for="myfile" class="form-label">Resume</label>
+						<input type="file" class="form-control form-control-sm" id="myfile" name="myfile" accept=".jpg,.jpeg,.webp,image/png">
+					</div>
+					<br>
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<input type="reset" name="btnReset" value="Reset">
+					<button type="submit" id="loginid" value="save" name="btnSave" class="btnreg" >Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+		
+		<div class="footer container-fluid">
+			<div class=" row justify-content-end col-lg-12  p-0 p-sm-3 mr-0 ">
+				<div class=" col-lg-auto col-5  col-md-7 col-align-contents-end ">
+					<a class="p-0 px-md-3 px-1"href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he">Copyright Info</a>
+					<a class="p-0 px-md-3 px-1"  href="https://www.facebook.com/login.php">References</a>
+					<a class="p-0 px-md-3 px-1" href="htmlpage.html">Contact</a>
+				<div>
+			</div>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+		<script src="jquery-3.7.1.min.js"></script>
+		<script src="ajax.js"></script>
+	
+	</body>
+	</html>
+		
+		
+		

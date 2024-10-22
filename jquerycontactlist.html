@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ajax contactlist form</title>
+		<link rel=stylesheet href="file.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+		
+</head>	
+<body>
+		<div class="header container-fluid">
+            <div class="row justify-content-between  p-2 p-sm-3 mr-0">
+                <div class="col-lg-auto col-5 col-md-7 col-align-contents-center ">
+				<img src="https://asset.brandfetch.io/idlUfmKm6s/idE5df3o5U.png?updated=1718222703707" class="img-fluid" alt="logo" >
+                    <a class="p-0 px-md-3 px-1" href="jqueryhomepage.html">Home</a>
+                    <a class="p-0 px-md-3 px-1" href="jquerycontactlist.html">Contacts</a>
+                    <a class="p-0 px-md-3 px-1" href="jqueryindex.html">Create Contact</a>
+                </div>
+                <div class=" col-lg-3 col-3 col-md-5">
+                    <a class=" ms-auto float-end me-sm-2 me-0" href="jquerylogin.html">Log out</a>
+                </div>
+            </div>
+        </div>
+		<div class="container-fluid">
+        <div class="row headerdiv mb-2">
+            <h2 class="fs-2">CONTACT DETAILS</h2>
+        </div>
+    </div>
+
+<div class="d-md-flex justify-content-md-end col-md-9">
+    <button class="btnAdd" id="button">Show Contacts</button>
+</div>
+
+<div class="container-lg my-md-2 col-lg-8 col-sm-auto" style="height:600px;">
+    <div class="table-responsive-sm">
+        <table class="listctctable table table-striped border-dark">
+            <thead>
+                <tr>
+                    <th>NUMBER</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>PHONENUMBER</th>
+                    <th>GENDER</th>
+                </tr>
+            </thead>
+            <tbody id="result_area">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+var xhr = new XMLHttpRequest();
+
+document.getElementById("button").addEventListener("click", function() {
+    xhr.open("GET", "http://localhost/bootstrap/ajaxpage.txt", true);
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            try {
+                var resultdata = JSON.parse(xhr.responseText); 
+                var htmlcontent = "";
+                for (var i = 0; i < resultdata.length; i++) {
+                    var currentdata = resultdata[i];
+                    htmlcontent += "<tr><td>" + currentdata.NUMBER + "</td><td>" + currentdata.NAME + "</td><td>" + currentdata.AGE + "</td><td>" + currentdata.PHONENUMBER + "</td><td>" + currentdata.GENDER + "</td></tr>";
+                }
+                document.getElementById("result_area").innerHTML = htmlcontent;
+            } catch (e) {
+                console.error("Error parsing JSON data:", e);
+            }
+        } else if (xhr.readyState == 4) {
+            alert("Error: " + xhr.status);
+        }
+    };
+
+    xhr.send();
+});
+</script>
+<div class="footer container-fluid">
+		<div class=" row justify-content-end col-lg-12  p-0 p-sm-3 mr-0 ">
+			<div class=" col-lg-auto col-5  col-md-7 col-align-contents-end ">
+			<a class="p-0 px-md-3 px-1"href="https://www.amazon.in/gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he">Copyright Info</a>
+			<a class="p-0 px-md-3 px-1"  href="https://www.facebook.com/login.php">References</a>
+			<a class="p-0 px-md-3 px-1" href="htmlpage.html">Contact</a>
+			<div>
+		</div>
+		</div>	
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>	
+		<script src="file.js"></script>
+</body>
+</html>
